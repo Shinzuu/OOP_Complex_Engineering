@@ -127,3 +127,11 @@ For inheritance use case , make a class CarParts which has all the
         | + searchByCriterion()  |
         | Additional methods...  |
         +------------------------+
+
+
+Design :
+    show diagram of classes 
+        main
+        parent  (car parts)
+        sub (car parts type wise)
+        group {admin privlages; add, sub, change volume}
