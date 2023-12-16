@@ -36,7 +36,6 @@ Extras:
               '--->items , increase/decrease volume , hide items .
 
     -Every items should have properties:
-        shown (true/false) (admin privlage) {csv doesnt support boolean}
         id (xxxx) {9000 uniqe vals}
         name (string)
         type (unique id) {sub total 8 catagories}
@@ -135,3 +134,29 @@ Design :
         parent  (car parts)
         sub (car parts type wise)
         group {admin privlages; add, sub, change volume}
+
+
+Technicals 
+    Interfaces:
+        Use interfaces to define a contract for classes that perform specific tasks.
+        In the context of your auto parts application, you might have an interface like AdminTasks that declares methods for adding parts and managing inventory.
+
+    Implementation Inheritance:
+        Use implementation inheritance (extending a class) when one class is a more specialized version of another.
+        For example, you might have a base class CarPart and subclasses like Engine and Brake that inherit from CarPart.
+
+    Overloading:
+        Overloading refers to defining multiple methods in the same class with the same name but different parameter lists.
+        In your application, you might have overloaded methods for adding different types of parts to the inventory.
+
+    Overriding:
+        Overriding occurs when a subclass provides a specific implementation for a method that is already defined in its superclass.
+        In the context of your application, you might override the toString method in subclasses to provide detailed information about specific parts.
+
+    Menus with Recursion:
+        Implement a menu system to interact with the user, allowing them to choose different options.
+        Use recursion to allow the menu to keep prompting the user until they choose to exit. Each menu option may call another function or method, leading to a recursive structure.
+
+    For-Each Loops:
+        Use for-each loops to iterate over elements in a collection (e.g., a list of car parts).
+        This can be useful when displaying or managing parts in the inventory.
