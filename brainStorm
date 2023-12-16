@@ -1,0 +1,129 @@
+AutoPartsHub
+ '-->Aftermarket car parts catalog business
+
+Functionalities: 
+    1. Add parts (with admin privlage)
+    2. Retrieve parts information (public/no credential needed)
+    3. Display by category 
+    4. Manage Inventory(admin)
+    5. Show Price 
+    6. Find nearest dealer
+    7. contact info.
+    8. Search by product name
+Extras: 
+    -In information there needs to be a unique id/ product id
+    
+    -Search by name (product name) utilise list lookup
+    
+    -Maybe a central data base for all parts ?
+    
+    -Category -> parts type -> brand/show all
+    
+    -Inventory add items needs to be able to auto generate parts 
+        numbers,
+        so maybe by using a global variable that starts from 1000 and increments after each added product . 
+
+    -Use CSV for database 
+
+    -Nearest dealer should ask for division (only in BD) and say the made up shop in that division 
+
+    -In contact info show shops , numbers , mails
+
+    -Search should only care for product name 
+
+    -Admin login should give access to write data on csv including 
+        adding
+              '--->items , increase/decrease volume , hide items .
+
+    -Every items should have properties:
+        shown (true/false) (admin privlage) {csv doesnt support boolean}
+        id (xxxx) {9000 uniqe vals}
+        name (string)
+        type (unique id) {sub total 8 catagories}
+        brand (unique id)  {around 5}
+        price (float)
+        availability (int)
+
+Main parts:
+
+        +---------------------+
+        |      CarPart        |
+        +---------------------+
+        | - id: int           |
+        | - name: String      |
+        | - type: String      |
+        | - brand: String     |
+        | - price: double     |
+        | - available: boolean|
+        +---------------------+
+        | + getters/setters   |
+        +---------------------+
+
+        +-----------------------------+
+        |    CarPartsCatalog          |
+        +-----------------------------+
+        | - parts: List<CarPart>      |
+        +-----------------------------+
+        | + addPart(part: CarPart)    |
+        | + retrievePartInformation() |
+        | + displayPartsByCategory    |
+        | + manageInventory           |
+        | + showPrice()               |
+        | + findNearestDealer()       |
+        | + contactInfo()             |
+        | + searchByName(name: String)|
+        +-----------------------------+
+
+        +---------------------+
+        |     Credentials      |
+        +----------------------+
+        | - username: String   |
+        | - password: String   |
+        +----------------------+
+        | + getters/setters    |
+        +----------------------+
+
+
+For inheritance use case , make a class CarParts which has all the
+    variebles needed. and use extened classes for engine . brake and so on with will their own unique vairables such as HP , wheel dia etc .
+
+    example:
+        +------------------------+
+        |   CarPart              |  <-- Base class
+        +------------------------+
+        | - id: int              |
+        | - name: String         |
+        | - type: String         |
+        | - brand: String        |
+        | - price: double        |
+        | - available: boolean   |
+        +------------------------+
+        | + matchesCriterion():  |
+        +------------------------+
+
+        +------------------------+
+        |        Engine          |  <-- Derived class
+        +------------------------+
+        | - horsepower: int      |
+        +------------------------+
+        | Additional methods...  |
+        +------------------------+
+
+        +------------------------+
+        |        Brake           |  <-- Derived class
+        +------------------------+
+        | - antilock: boolean    |
+        +------------------------+
+        | Additional methods...  |
+        +------------------------+
+
+        +------------------------+
+        |   CarPartsCatalog      |
+        +------------------------+
+        | - parts: List<CarPart> |
+        +------------------------+
+        | + addPart()            |
+        | + removePart()         |
+        | + searchByCriterion()  |
+        | Additional methods...  |
+        +------------------------+
