@@ -1,6 +1,6 @@
 AutoPartsHub
  '-->Aftermarket car parts catalog business
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 Functionalities: 
     1. Add parts (with admin privlage)
     2. Retrieve parts information (public/no credential needed)
@@ -10,6 +10,7 @@ Functionalities:
     6. Find nearest dealer
     7. contact info.
     8. Search by product name
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 Extras: 
     -In information there needs to be a unique id/ product id
     
@@ -42,7 +43,7 @@ Extras:
         brand (unique id)  {around 5}
         price (float)
         availability (int)
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 Main parts:
 
         +---------------------+
@@ -82,7 +83,7 @@ Main parts:
         | + getters/setters    |
         +----------------------+
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 For inheritance use case , make a class CarParts which has all the
     variebles needed. and use extened classes for engine . brake and so on with will their own unique vairables such as HP , wheel dia etc .
 
@@ -127,7 +128,7 @@ For inheritance use case , make a class CarParts which has all the
         | Additional methods...  |
         +------------------------+
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 Design :
     show diagram of classes 
         main
@@ -135,7 +136,7 @@ Design :
         sub (car parts type wise)
         group {admin privlages; add, sub, change volume}
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 Technicals 
     Interfaces:
         Use interfaces to define a contract for classes that perform specific tasks.

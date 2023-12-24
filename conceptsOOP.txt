@@ -1,0 +1,59 @@
+objects       :   entities / bundle data and methods
+class         :   template / to define properties of objects
+Encapsulation :   safes / protects state of objects
+inheritance   :   heritage / use classes based on other classs' properties
+polimorphism  :   shape-shifter / objects to act like instances
+abstraction   :   controller / by pressing button , you take action without know how
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+implement:
+    Think of it like: A promise to do something.
+    Example: Imagine you have a set of rules for a game. When you decide to play the game, you promise to follow those rules.
+    Why we use it: In Java, when a class says it "implements" an interface, it's promising to follow the rules (methods) outlined by that interface.
+
+interface:
+
+    Think of it like: A job description.
+    Example: Think of a job where you have a list of tasks to do, but the description doesn't tell you how to do them, just what needs to be done.
+    Why we use it: It says what methods a class should have, but not how they should be done. Classes that implement the interface promise to fulfill this job description.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+When to use implements:
+
+    Scenario: You have specific things to do (methods) and want to promise that a particular class will do them.
+    Example: You have a "Cooking" class, and you want to promise that it can "Chop" and "Boil."
+
+2. When to use interface:
+
+    Scenario: You want to define a general set of tasks (methods) that different classes should be able to do.
+    Example: You create an "Appliance" interface that says every appliance should be able to "Turn On" and "Turn Off."
+
+Putting it together:
+
+    Use implements when you want to say, "This class promises to do these specific things."
+    Use interface when you want to say, "Any class that wants to be part of this group should be able to do these general things."
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+DATA SET:
+1xxx    Engine
+2xxx    Wheels
+3xxx    Turbo
+4xxx    ECU
+5xxx    Rear Wing
+6xxx    Aero kit
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Data access type:
+    Reading File Each Time:
+
+        Advantages:
+
+            Lower Memory Usage: Reading the file each time requires less memory as only the necessary data is loaded when needed.
+            Up-to-Date: If the file is frequently modified externally, reading it each time ensures you get the latest data.
+
+        Disadvantages:
+
+            Slower Access: Reading from a file can be slower compared to accessing data directly from memory.
+            Increased I/O Operations: Reading the file repeatedly can result in increased I/O operations, which might be a performance bottleneck.
+
+so the program would look up data each time to keep the inventory upto Date

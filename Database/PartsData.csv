@@ -1,0 +1,36 @@
+ID,Name,Type,Brand,Price,HP,Diameter,Boost,Material,Color
+1000,2JZ-GTE,Engine,Toyota,16000$,1900HP,,,,
+1001,RB26DETT,Engine,Nissan,69000$,2140HP,,,,
+1002,EJ20K,Engine,Subaru,9599$,780HP,,,,
+1003,13B-REW,Engine,Mazda,12500$,850HP,,,,
+1004,K20-KT1200,Engine,Honda,13500$,920HP,,,,
+2000,GTX 03,Wheels,SSR,300$,,"18""",,,
+2001,Speed Star MK-|||,Wheels,SSR,450$,,"15""",,,
+2002,Vienna Noble,Wheels,SSR,240$,,"18""",,,
+2003,INTEGRAL GT,Wheels,SSR,270$,,"17""",,,
+2004,REV NT03RR,Wheels,ENKEI,400$,,"21""",,,
+2005,GTC01RP,Wheels,ENKEI,450$,,"18""",,,
+2006,SPORT RC-T5,Wheels,ENKEI,300$,,"17""",,,
+2007,Type ST,Wheels,HAYASHI,500$,,"18""",,,
+2008,ADVAN BEYOND,Wheels,YOKOHAMA,1250$,,"19""",,,
+2009,ADVAN GT,Wheels,YOKOHAMA,1300$,,"21""",,,
+3000,T88/T88H,Turbo,Greddy,3100$,,,9.5psi,,
+3001,Replacement Turbo,Turbo,Blitz,1800$,,,7psi,,
+3002,TD-06SH,Turbo,Greddy,2100$,,,7.5 psi,,
+3003,GTIII-5R,Turbo,HKS,3300$,,,11 psi,,
+3004,RHB31FW,Turbo,Monster Sport,2250$,,,8 psi,,
+4000,Power FC,ECU,APEXi,1740$,,,,,
+4001,Power FC D-Jetro,ECU,APEXi,1140$,,,,,
+4002,Sport ECU,ECU,D Sport,890$,,,,,
+4003,VX-ROM - R35,ECU,Mines,2750$,,,,,
+5000,Exclusive Base Mount Kit,Rear Wing,Voltex,1250$,,,,Carbon FIber,
+5001,GT-Wing Type 5V,Rear Wing,Voltex,4490$,,,,Carbon FIber,
+5002,Swan Neck Base,Rear Wing,Voltex,550$,,,,Aluminium,
+5003,GT-Wing Type 5,Rear Wing,Voltex,4690$,,,,Plexi glass,
+5004,Power Wing,Rear Wing,326 Power,390$,,,,Aluminium,
+5005,GT- Wing Type 12 SN,Rear Wing,Voltex,1860$,,,,Carbon FIber,
+6000,86 Series 2,Aero Kit,Toyota,3870$,,,,,Red
+6001,MR2 SW20,Aero Kit,Greddy,640$,,,,,White
+6002,R33 GTR,Aero Kit,Nissan,2100$,,,,,Cyan
+6003,S2000 wide body,Aero Kit,J's Racing,6140$,,,,,Black
+6004,Aero- Street Version 1,Aero Kit,Voltex,3310$,,,,,White
