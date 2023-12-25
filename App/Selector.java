@@ -33,7 +33,7 @@ public class Selector extends Parts {
                 break;
         }
     }
-
+    //dummy fn for checking code
     public static void main(String[] args) {
         new Selector(1);
     }
