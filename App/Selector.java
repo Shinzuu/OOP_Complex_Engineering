@@ -16,7 +16,7 @@ public class Selector extends Parts {
     int x;
 
     // Public constructor with a parameter
-    Selector(int x) {
+    public Selector(int x) {
         super(0, "", "", "", 0, 0); // replace with appropriate default values
         this.x = x;
         switch (x) {
@@ -96,7 +96,7 @@ public class Selector extends Parts {
     public void printPartType() {
         Scanner scn = new Scanner(System.in);
         // Add logic for printing parts of a specific type
-        System.out.println("Please select which type of product you want to see by, inserting number(1-6):");
+        System.out.println("Please select which type of product you want to see by, inserting number(1-6)");
         System.out.println("'--> 1 for Engine.");
         System.out.println("'--> 2 for Wheels.");
         System.out.println("'--> 3 for Turbo.");
@@ -150,33 +150,33 @@ public class Selector extends Parts {
         for (String str : uniqueStrings) {
             System.out.println(i++ + " for " + str);
         }
-        //2nd part . choosing the brand
-        Scanner scn = new Scanner(System.in);
-        
-        System.out.print("Select range: ");
-        int y = scn.nextInt();
-        while ( y< 1 || y > (i-1)) {
-            System.out.println("Invalid range. Please insert a number between 1 to "+(i-1)+":");
+        try (//2nd part . choosing the brand
+        Scanner scn = new Scanner(System.in)) {
             System.out.print("Select range: ");
-            y = scn.nextInt();
-        }
-        
-        i=1;    //iterator
-        for (String str : uniqueStrings) {
-            if(i==y){
-                //str is the name of the brand
-                System.out.println("\t=====You chose "+ str +"=====");
-                System.out.println("=====The available parts from "+ str +" are=====");
-                System.out.println();   //blank line
-                printPartAll(str);
+            int y = scn.nextInt();
+            while ( y< 1 || y > (i-1)) {
+                System.out.println("Invalid range. Please insert a number between 1 to "+(i-1)+"");
+                System.out.print("Select range: ");
+                y = scn.nextInt();
+            }
+            
+            i=1;    //iterator
+            for (String str : uniqueStrings) {
+                if(i==y){
+                    //str is the name of the brand
+                    System.out.println("\t=====You chose "+ str +"=====");
+                    System.out.println("=====The available parts from "+ str +" are=====");
+                    System.out.println();   //blank line
+                    printPartAll(str);
 
-                //  **need to add go back/ go to main menu here** + find dealer near you
+                    //  **need to add go back/ go to main menu here** + find dealer near you
+                }
+                else
+                {
+                    //do nothing
+                }
+                i++;
             }
-            else
-            {
-                //do nothing
-            }
-            i++;
         }
         
     }
