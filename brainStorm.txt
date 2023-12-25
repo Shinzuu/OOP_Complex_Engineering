@@ -96,7 +96,7 @@ For inheritance use case , make a class CarParts which has all the
         | - type: String         |
         | - brand: String        |
         | - price: double        |
-        | - available: boolean   |
+        | - available: int       |
         +------------------------+
         | + matchesCriterion():  |
         +------------------------+
@@ -169,6 +169,8 @@ DATA SET:
 4xxx    ECU
 5xxx    Rear Wing
 6xxx    Aero kit
+    **maybe not ? i can just .equals type to find the same info**
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 Data access type:
     Reading File Each Time:
@@ -184,3 +186,4 @@ Data access type:
             Increased I/O Operations: Reading the file repeatedly can result in increased I/O operations, which might be a performance bottleneck.
 
 so the program would look up data each time to keep the inventory upto Date
+------------------------------------------------------------------------------------------------------------------------------------------------------------
