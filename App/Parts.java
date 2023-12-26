@@ -34,22 +34,22 @@ public class Parts {
             return new Engine(id, name, type, brand, price, volume, horsepower);
         }
         else if(type.equalsIgnoreCase("Wheels")){
-            int diameter = Integer.parseInt(data[7].trim());
+            int diameter = Integer.parseInt(data[6].trim());
             return new Wheels(id, name, type, brand, price, volume, diameter);
         }
         else if(type.equalsIgnoreCase("Turbo")){
-            String boost = (data[8].trim());
+            String boost = (data[6].trim());
             return new Turbo(id, name, type, brand, price, volume, boost);
         }
         else if(type.equalsIgnoreCase("Ecu")){
             return new Ecu(id, name, type, brand, price, volume);
         }
         else if(type.equalsIgnoreCase("Rear wing")){
-            String material = (data[9].trim());
+            String material = (data[6].trim());
             return new RearWing(id, name, type, brand, price, volume, material);
         }
         else if(type.equalsIgnoreCase("Aero Kit")){
-            String color = (data[10].trim());
+            String color = (data[6].trim());
             return new AeroKit(id, name, type, brand, price, volume, color);
         }
         else {

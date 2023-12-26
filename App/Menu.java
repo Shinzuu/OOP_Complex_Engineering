@@ -42,12 +42,22 @@ public class Menu {
                 //System.out.println("\t-----------------------------------");
                 System.out.println("\t===================================");
                 System.out.print("\tInsert number between 1 to 5:  ");
-                x = scn.nextInt();
-                while ( x < 1 || x > 5) {
-                    System.out.println("\tInvalid range. \n\tPlease insert a number between 1 to 4.");
-                    System.out.print("\tSelect range: ");
-                    x = scn.nextInt();
+                
+                System.out.print("\tInsert number between 1 to 4:  ");
+                int x;
+
+                while (true) {
+                    try {
+                        x = scn.nextInt();
+                        scn.nextLine();  // Consume the newline character
+                        break;
+                    } catch (Exception e) {
+                        System.out.println("Invalid input. Please enter a number.");
+                        scn.nextLine();  // Consume the invalid input
+                    }
                 }
+
+
                 System.out.println("\t-----------------------------------");
 
                 switch (x) {
@@ -80,13 +90,13 @@ public class Menu {
                 System.out.println("\t-----------------------------------");
             case 4:
                 //admin panel
-                new AdminPanel();
+                new LoginVerification();
                 break;
 
             default:
                 break;
         }
-        new Menu();
+        //new Menu();
     }
 
 }

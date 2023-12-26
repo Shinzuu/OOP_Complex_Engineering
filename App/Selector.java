@@ -33,13 +33,14 @@ public class Selector extends Parts {
                 // doesn't need default. will limit user input before coming to this part
                 break;
         }
+        new CallBack();
     }
     // //dummy fn for checking code
     // public static void main(String[] args) {
     //     new Selector(3);
     // }
     //iterate through each CSV lines and prints all data
-    public void printPartAll() {
+    public static void printPartAll() {
         String csvFilePath = "Database/PartsData.csv";
     
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
@@ -185,6 +186,7 @@ public class Selector extends Parts {
             printPartAll(s);
         //  **need to add go back/ go to main menu here**
         // try again or go to menu
+        new CallBack();
     }
 
 
