@@ -85,10 +85,12 @@ public class AdminPanel {
                     }
 
                     CSVWriter.updateVolume(t, v);
+                    new AdminPanel();
                     break;
                 case 2:
                     // looks for the highest ID, does +1, and adds parts based on type;
                     CSVWriter.addNewPart();
+                    new Disclaimer();
                     break;
                 case 3:
                     // creates a new Menu instance
@@ -97,7 +99,7 @@ public class AdminPanel {
                 default:
                     break;
             }
-            new Menu();
+            
         }
     }
 }

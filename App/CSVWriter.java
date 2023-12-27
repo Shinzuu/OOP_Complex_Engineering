@@ -137,6 +137,4 @@ public class CSVWriter {
 
         return highestIndex;
     }
-    
-    // Other methods...
 }
