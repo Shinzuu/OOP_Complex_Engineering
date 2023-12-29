@@ -9,8 +9,6 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Scanner;
-
 
 public class CSVWriter {
     private static final String CSV_FILE_PATH = "Database/PartsData.csv";
@@ -39,79 +37,72 @@ public class CSVWriter {
     }
 
     public static void addNewPart() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            // Read existing lines to find the highest index
-            int highestIndex = findHighestIndex();
-            int newIndex = highestIndex + 1;
-    
-            System.out.println("Adding a new part with index: " + newIndex);
-    
-            // Gather information from the user
-            System.out.print("Enter part name: ");
-            String name = scanner.nextLine();
-    
-            System.out.print("Enter part type: ");
-            String type = scanner.nextLine();
-    
-            System.out.print("Enter part brand: ");
-            String brand = scanner.nextLine();
-    
-            System.out.print("Enter part price: ");
-            int price = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
-    
-            System.out.print("Enter part volume: ");
-            int volume = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
-    
-            String additionalInfo = "";
-    
-            // Based on part type, ask for additional information
-            switch (type.toLowerCase()) {
-                case "engine":
-                    System.out.print("Enter horsepower: ");
-                    additionalInfo = scanner.nextLine();
-                    break;
-                case "wheels":
-                    System.out.print("Enter diameter: ");
-                    additionalInfo = scanner.nextLine();
-                    break;
-                case "turbo":
-                    System.out.print("Enter boost: ");
-                    additionalInfo = scanner.nextLine();
-                    break;
-                case "ecu":
-                    // No additional information for ECU
-                    break;
-                case "rear wing":
-                    System.out.print("Enter material: ");
-                    additionalInfo = scanner.nextLine();
-                    break;
-                case "aero kit":
-                    System.out.print("Enter color: ");
-                    additionalInfo = scanner.nextLine();
-                    break;
-                default:
-                    System.out.println("Invalid part type.");
-                    return;
-            }
-    
-            // Construct the new part line
-            String newPartLine = newIndex + "," + name + "," + type + "," + brand + "," + price + "," + volume + "," + additionalInfo;
-    
-            // Append the new line to the CSV file
-            try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(CSV_FILE_PATH, true)))) {
-                writer.println(newPartLine);
-                System.out.println("New part added successfully.");
-    
-            } catch (IOException e) {
-                System.out.println("Error writing to the CSV file.");
-                e.printStackTrace();
-    
-            }
-    
+        // Read existing lines to find the highest index
+        int highestIndex = findHighestIndex();
+        int newIndex = highestIndex + 1;
+
+        System.out.println("Adding a new part with index: " + newIndex);
+
+        // Gather information from the user
+        System.out.print("Enter part name: ");
+        String name = AppScanner.nextLine();
+
+        System.out.print("Enter part type: ");
+        String type = AppScanner.nextLine();
+
+        System.out.print("Enter part brand: ");
+        String brand = AppScanner.nextLine();
+
+        System.out.print("Enter part price: ");
+        int price = AppScanner.nextInt();
+
+        System.out.print("Enter part volume: ");
+        int volume = AppScanner.nextInt();
+
+        String additionalInfo = "";
+
+        // Based on part type, ask for additional information
+        switch (type.toLowerCase()) {
+            case "engine":
+                System.out.print("Enter horsepower: ");
+                additionalInfo = AppScanner.nextLine();
+                break;
+            case "wheels":
+                System.out.print("Enter diameter: ");
+                additionalInfo = AppScanner.nextLine();
+                break;
+            case "turbo":
+                System.out.print("Enter boost: ");
+                additionalInfo = AppScanner.nextLine();
+                break;
+            case "ecu":
+                // No additional information for ECU
+                break;
+            case "rear wing":
+                System.out.print("Enter material: ");
+                additionalInfo = AppScanner.nextLine();
+                break;
+            case "aero kit":
+                System.out.print("Enter color: ");
+                additionalInfo = AppScanner.nextLine();
+                break;
+            default:
+                System.out.println("Invalid part type.");
+                return;
         }
-    
+
+        // Construct the new part line
+        String newPartLine = newIndex + "," + name + "," + type + "," + brand + "," + price + "," + volume + "," + additionalInfo;
+
+        // Append the new line to the CSV file
+        try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(CSV_FILE_PATH, true)))) {
+            writer.println(newPartLine);
+            System.out.println("New part added successfully.");
+
+        } catch (IOException e) {
+            System.out.println("Error writing to the CSV file.");
+            e.printStackTrace();
+        }
     }
 
     private static int findHighestIndex() {

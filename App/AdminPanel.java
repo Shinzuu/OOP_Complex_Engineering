@@ -1,7 +1,5 @@
 package App;
 
-import java.util.Scanner;
-
 public class AdminPanel {
     String id, pass;
     String c;
@@ -10,7 +8,8 @@ public class AdminPanel {
         // admin privilege starts here
         System.out.println("\tLogin Successful");
 
-        try (Scanner scn = new Scanner(System.in)) {
+        // Use AppScanner instead of Scanner
+        try {
             // 2ND PART
             System.out.println("\t===================================");
             System.out.println("\t\tAdmin Panel");
@@ -25,12 +24,10 @@ public class AdminPanel {
             int x;
             while (true) {
                 try {
-                    x = scn.nextInt();
-                    scn.nextLine(); // Consume the newline character
+                    x = AppScanner.nextInt();
                     break;
                 } catch (Exception e) {
                     System.out.println("Invalid input. Please enter a number.");
-                    scn.nextLine(); // Consume the invalid input
                 }
             }
 
@@ -40,12 +37,10 @@ public class AdminPanel {
 
                 while (true) {
                     try {
-                        x = scn.nextInt();
-                        scn.nextLine(); // Consume the newline character
+                        x = AppScanner.nextInt();
                         break;
                     } catch (Exception e) {
                         System.out.println("Invalid input. Please enter a number.");
-                        scn.nextLine(); // Consume the invalid input
                     }
                 }
             }
@@ -61,12 +56,10 @@ public class AdminPanel {
 
                     while (true) {
                         try {
-                            t = scn.nextInt();
-                            scn.nextLine(); // Consume the newline character
+                            t = AppScanner.nextInt();
                             break;
                         } catch (Exception e) {
                             System.out.println("Invalid input. Please enter a number.");
-                            scn.nextLine(); // Consume the invalid input
                         }
                     }
 
@@ -75,12 +68,10 @@ public class AdminPanel {
 
                     while (true) {
                         try {
-                            v = scn.nextInt();
-                            scn.nextLine(); // Consume the newline character
+                            v = AppScanner.nextInt();
                             break;
                         } catch (Exception e) {
                             System.out.println("Invalid input. Please enter a number.");
-                            scn.nextLine(); // Consume the invalid input
                         }
                     }
 
@@ -90,7 +81,7 @@ public class AdminPanel {
                 case 2:
                     // looks for the highest ID, does +1, and adds parts based on type;
                     CSVWriter.addNewPart();
-                    new Disclaimer();
+                    new AdminPanel();
                     break;
                 case 3:
                     // creates a new Menu instance
@@ -99,7 +90,8 @@ public class AdminPanel {
                 default:
                     break;
             }
-            
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

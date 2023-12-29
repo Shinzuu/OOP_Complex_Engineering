@@ -1,16 +1,13 @@
 package App;
 
-import java.util.Scanner;
-
 public class LocationFinder {
-    Scanner scn = new Scanner(System.in);
     int n;
-    LocationFinder(){
+
+    public LocationFinder() {
         System.out.println("\t===================================");
         System.out.println("\t\tDealership Finder");
         System.out.println("\t===================================");
         System.out.println("\t'-->Navigate by inserting index<--'");
-        //System.out.println("\t-----------------------------------");
         System.out.println("\t1.IN Barishal");
         System.out.println("\t2.IN Chittagong");
         System.out.println("\t3.IN Dhaka");
@@ -18,10 +15,12 @@ public class LocationFinder {
         System.out.println("\t5.IN Rajshahi");
         System.out.println("\t6.IN Rangpur");
         System.out.println("\t7.IN Sylhet");
-        //System.out.println("\t-----------------------------------");
         System.out.println("\t===================================");
         System.out.print("\tInsert number between 1 to 5:  ");
-        this.n = scn.nextInt();
+        
+        // Use AppScanner for user input
+        this.n = AppScanner.nextInt();
+
         switch (n) {
             case 1:
                 System.out.println("\t===================================");
@@ -73,11 +72,10 @@ public class LocationFinder {
                 System.out.println("\t===================================");
                 break;
             default:
-                //dummy
+                // dummy
                 break;
         }
-        // System.out.print("\tPress any key + enter to go back to Menu");
-        // String c = scn.next();
+        
         System.out.println("\t-------->Going back to menu<-------");
         new Menu();
     }
