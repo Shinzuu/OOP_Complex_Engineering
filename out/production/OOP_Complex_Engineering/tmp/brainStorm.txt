@@ -1,0 +1,189 @@
+AutoPartsHub
+ '-->Aftermarket car parts catalog business
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Functionalities: 
+    1. Add parts (with admin privlage)
+    2. Retrieve parts information (public/no credential needed)
+    3. Display by category 
+    4. Manage Inventory(admin)
+    5. Show Price 
+    6. Find nearest dealer
+    7. contact info.
+    8. Search by product name
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Extras: 
+    -In information there needs to be a unique id/ product id
+    
+    -Search by name (product name) utilise list lookup
+    
+    -Maybe a central data base for all parts ?
+    
+    -Category -> parts type -> brand/show all
+    
+    -Inventory add items needs to be able to auto generate parts 
+        numbers,
+        so maybe by using a global variable that starts from 1000 and increments after each added product . 
+
+    -Use CSV for database 
+
+    -Nearest dealer should ask for division (only in BD) and say the made up shop in that division 
+
+    -In contact info show shops , numbers , mails
+
+    -Search should only care for product name 
+
+    -Admin login should give access to write data on csv including 
+        adding
+              '--->items , increase/decrease volume , hide items .
+
+    -Every items should have properties:
+        id (xxxx) {9000 uniqe vals}
+        name (string)
+        type (unique id) {sub total 8 catagories}
+        brand (unique id)  {around 5}
+        price (float)
+        availability (int)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Main parts:
+
+        +---------------------+
+        |      CarPart        |
+        +---------------------+
+        | - id: int           |
+        | - name: String      |
+        | - type: String      |
+        | - brand: String     |
+        | - price: double     |
+        | - available: boolean|
+        +---------------------+
+        | + getters/setters   |
+        +---------------------+
+
+        +-----------------------------+
+        |    CarPartsCatalog          |
+        +-----------------------------+
+        | - parts: List<CarPart>      |
+        +-----------------------------+
+        | + addPart(part: CarPart)    |
+        | + retrievePartInformation() |
+        | + displayPartsByCategory    |
+        | + manageInventory           |
+        | + showPrice()               |
+        | + findNearestDealer()       |
+        | + contactInfo()             |
+        | + searchByName(name: String)|
+        +-----------------------------+
+
+        +---------------------+
+        |     Credentials      |
+        +----------------------+
+        | - username: String   |
+        | - password: String   |
+        +----------------------+
+        | + getters/setters    |
+        +----------------------+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+For inheritance use case , make a class CarParts which has all the
+    variebles needed. and use extened classes for engine . brake and so on with will their own unique vairables such as HP , wheel dia etc .
+
+    example:
+        +------------------------+
+        |   CarPart              |  <-- Base class
+        +------------------------+
+        | - id: int              |
+        | - name: String         |
+        | - type: String         |
+        | - brand: String        |
+        | - price: double        |
+        | - available: int       |
+        +------------------------+
+        | + matchesCriterion():  |
+        +------------------------+
+
+        +------------------------+
+        |        Engine          |  <-- Derived class
+        +------------------------+
+        | - horsepower: int      |
+        +------------------------+
+        | Additional methods...  |
+        +------------------------+
+
+        +------------------------+
+        |        Brake           |  <-- Derived class
+        +------------------------+
+        | - antilock: boolean    |
+        +------------------------+
+        | Additional methods...  |
+        +------------------------+
+
+        +------------------------+
+        |   CarPartsCatalog      |
+        +------------------------+
+        | - parts: List<CarPart> |
+        +------------------------+
+        | + addPart()            |
+        | + removePart()         |
+        | + searchByCriterion()  |
+        | Additional methods...  |
+        +------------------------+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Design :
+    show diagram of classes 
+        main
+        parent  (car parts)
+        sub (car parts type wise)
+        group {admin privlages; add, sub, change volume}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Technicals 
+    Interfaces:
+        Use interfaces to define a contract for classes that perform specific tasks.
+        In the context of your auto parts application, you might have an interface like AdminTasks that declares methods for adding parts and managing inventory.
+
+    Implementation Inheritance:
+        Use implementation inheritance (extending a class) when one class is a more specialized version of another.
+        For example, you might have a base class CarPart and subclasses like Engine and Brake that inherit from CarPart.
+
+    Overloading:
+        Overloading refers to defining multiple methods in the same class with the same name but different parameter lists.
+        In your application, you might have overloaded methods for adding different types of parts to the inventory.
+
+    Overriding:
+        Overriding occurs when a subclass provides a specific implementation for a method that is already defined in its superclass.
+        In the context of your application, you might override the toString method in subclasses to provide detailed information about specific parts.
+
+    Menus with Recursion:
+        Implement a menu system to interact with the user, allowing them to choose different options.
+        Use recursion to allow the menu to keep prompting the user until they choose to exit. Each menu option may call another function or method, leading to a recursive structure.
+
+    For-Each Loops:
+        Use for-each loops to iterate over elements in a collection (e.g., a list of car parts).
+        This can be useful when displaying or managing parts in the inventory.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+DATA SET:
+1xxx    Engine
+2xxx    Wheels
+3xxx    Turbo
+4xxx    ECU
+5xxx    Rear Wing
+6xxx    Aero kit
+    **maybe not ? i can just .equals type to find the same info**
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Data access type:
+    Reading File Each Time:
+
+        Advantages:
+
+            Lower Memory Usage: Reading the file each time requires less memory as only the necessary data is loaded when needed.
+            Up-to-Date: If the file is frequently modified externally, reading it each time ensures you get the latest data.
+
+        Disadvantages:
+
+            Slower Access: Reading from a file can be slower compared to accessing data directly from memory.
+            Increased I/O Operations: Reading the file repeatedly can result in increased I/O operations, which might be a performance bottleneck.
+
+so the program would look up data each time to keep the inventory upto Date
+------------------------------------------------------------------------------------------------------------------------------------------------------------
